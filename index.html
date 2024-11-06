@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloSoft</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Main Content Start -->
+        <div class="main">
+            <div class="text-center s-bg text-white py-3">
+                <h1>
+                   CloSoft
+                </h1>
+            </div>
+            <div class="container">
+            <div class="row">
+                <div class="col-md-5 p-4">
+                    <h4 class="title p-color">Add Production</h4>
+                    <div class="mx-auto p-4 round shadow">
+                        <form id="production-update">
+                            <div class="row py-2">
+                                <div class="form-group col-md-4">
+                                    <label for="date">Date</label>
+                                    <input type="text" class="form-control" id="date" name="date" readonly="" required="">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="section">Section</label>
+                                    <select class="form-control" id="section" name="section" required="">
+                                        <option value="" selected="">Select Section</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="unit">Unit</label>
+                                    <select class="form-control" id="unit" name="unit" required="">
+                                        <option value="" selected="">Select Unit</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row py-2">
+                                <div class="form-group col-md-6">
+                                    <label for="line">Line</label>
+                                    <select class="form-control" id="line" name="line" required="">
+                                        <option value="" selected="">Select Line</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6 my-md-2">
+                                    <label for="buyer">Buyer</label>
+                                    <select class="form-control" id="buyer" name="buyer" required="">
+                                        <option value="" selected>Select Buyer</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row py-2">
+                                <div class="form-group col-md-6 my-md-2">
+                                    <label for="style">Style</label>
+                                    <select class="form-control" id="style" name="style" required="">
+                                        <option value="" selected>Select Style</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="hour">Hour</label>
+                                    <select class="form-control" id="hour" name="hour" required="">
+                                        <option value="" selected="">Select Hour</option>
+                                        <option value="1st Hour" >1st Hour</option>
+                                        <option value="2nd Hour" >2nd Hour</option>
+                                        <option value="3rd Hour" >3rd Hour</option>
+                                        <option value="4th Hour" >4th Hour</option>
+                                        <option value="5th Hour" >5th Hour</option>
+                                        <option value="6th Hour" >6th Hour</option>
+                                        <option value="7th Hour" >7th Hour</option>
+                                        <option value="8th Hour" >8th Hour</option>
+                                        <option value="9th Hour" >9th Hour</option>
+                                        <option value="10th Hour" >10th Hour</option>
+                                        <option value="11th Hour" >11th Hour</option>
+                                        <option value="12th Hour" >12th Hour</option>
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <div class="row py-2">
+                                <div class="form-group col-md-6">
+                                    <label for="manpower">Actual Manpower</label>
+                                    <input type="number" class="form-control" id="manpower" name="manpower" required="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="production">Actual Production</label>
+                                    <input type="number" class="form-control" id="production" name="production" required="">
+                                </div>
+                            </div>
+                            <div class="row py-2">
+                                <div class="form-group col-md-6">
+                                    <label for="defectQty">Defect Qty</label>
+                                    <input type="number" class="form-control" id="defectQty" name="defectQty" required="">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="rejectQty">Reject Qty</label>
+                                    <input type="number" class="form-control" id="rejectQty" name="rejectQty" required="">
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn p-btn w-100 py-2 my-3">Add Data</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-7 p-2">
+                    <h4 class="title">Today's Production</h4>
+                    <div>
+                        <table class="table table-boardered" id="productionTable">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Section</th>
+                                    <th>Unit</th>
+                                    <th>Line</th>
+                                    <th>Lowest M/P (Hr)</th>
+                                    <th>Production</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- Loading Modal -->
+            <div id="loadingModal" class="modal" tabindex="-1" role="dialog" style="display: none;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <div id="loadingAnimation">Loading...</div> <!-- You can replace this with a spinner -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Success Modal -->
+            <div id="successModal" class="modal" tabindex="-1" role="dialog" style="display: none;">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <h2>✔️</h2>
+                            <p>Submission Successful!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="script.js"></script>
+    <script src="./assets/js/add-production.js"></script>
+</body>
+
+</html>
